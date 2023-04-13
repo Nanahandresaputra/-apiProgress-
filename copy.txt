@@ -1,0 +1,16 @@
+let tmp_path_img = req.files[0].path;
+      let tmp_path_ptr = req.files[1].path;
+      let imageUrlName = req.files[0].filename;
+      let posterUrlName = req.files[1].filename;
+      let target_path1 = path.resolve(config.rootPath, `fungamesapi/public/images/games/${imageUrlName}`);
+      let target_path2 = path.resolve(config.rootPath, `fungamesapi/public/images/games/${posterUrlName}`);
+
+      let src = CombinedStream.create({ pauseStreams: false });
+      src.append(fs.createReadStream(tmp_path_ptr));
+      src.append(fs.createReadStream(tmp_path_img));
+
+      const dest1 = fs.createWriteStream(target_path1);
+      const dest2 = fs.createWriteStream(target_path2);
+
+      src.pipe(dest1);
+      src.pipe(dest2);

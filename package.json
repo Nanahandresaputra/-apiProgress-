@@ -1,0 +1,27 @@
+{
+  "name": "crud-backend",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "nana",
+  "license": "ISC",
+  "dependencies": {
+    "@casl/ability": "^6.4.0",
+    "combined-stream2": "^1.1.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.0.3",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^2.0.22",
+    "passport-local": "^1.0.0",
+    "uuidv4": "^6.2.13"
+  }
+}
